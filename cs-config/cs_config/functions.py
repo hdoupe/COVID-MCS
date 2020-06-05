@@ -1,5 +1,5 @@
 # Write or import your Compute Studio functions here.
-
+import COVID_MCS
 
 def get_version():
     pass
