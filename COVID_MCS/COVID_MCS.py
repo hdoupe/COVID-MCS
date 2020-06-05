@@ -69,8 +69,13 @@ class COVID_MCS_TEST:
         # Intitalize R object and source main
         r1 = ro.r
         r1['source'](mcs_shapes)
+
         z = r1['mcs_shapes'](t = ro.IntVector(t), n =  ro.IntVector(n), y1 = ro.IntVector(y1),
                              shape=  ro.StrVector(shapes), ceiling = float(ceil), lag = float(lag))
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
         m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = .1)
         t = r1['summary'](m)
+
+
+c = COVID_MCS_TEST()
+c.run_model()
