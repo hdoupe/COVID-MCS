@@ -1,0 +1,96 @@
+{
+  "schema": {
+    "labels":{},
+    "additional_members": {}
+  },
+  "Nested":{
+    "title": "Models Are Nested",
+    "description": "Models are ordered in least to most specific",
+    "type": "bool",
+    "value": false,
+    "validators": {}
+  },
+  "Shapes":{
+    "title": "Shapes to Test",
+    "description": "Shapes for model to test, separated by a comma and a space. See documentation for possible shapes.",
+    "type": "str",
+    "value": "dec_cei, unr",
+    "validators": {}
+  },
+  "Days":{
+    "title": "Indicies demarking unique days",
+    "description": "List of numbers indicating days, separated by a comma.",
+    "type": "str",
+    "value": "1,2,3",
+    "validators": {}
+  },
+  "NumTests":{
+    "title": "Number of Tests",
+    "description": "Total number of tests on a unique day, separated by a comma.",
+    "type": "str",
+    "value": "500,500,500",
+    "validators": {}
+  },
+  "NumPositive":{
+    "title": "Number of Positive ests",
+    "description": "Total number of positive tests on a unique day, separated by a comma.",
+    "type": "str",
+    "value": "100,300,200",
+    "validators": {}
+  },
+  "Alpha":{
+    "title": "Alpha",
+    "description": "Significance level for the test",
+    "type": "float",
+    "value": ".95",
+    "validators": {
+      "range":{
+        "min": "0",
+        "max" : "1"
+      }
+    }
+  },
+  "Ceil":{
+    "title": "Ceiling",
+    "description": "Sets the ceilieng for the relevant shape constraints",
+    "type": "float",
+    "value": "1",
+    "validators": {
+      "range":{
+        "min": "0",
+        "max" : "1"
+      }
+    }
+  },
+  "Lag":{
+    "title": "Ceiling",
+    "description": "Permits comparisons across proportions more than one day apart",
+    "type": "float",
+    "value": "1",
+    "validators": {
+      "range":{
+        "min": "0",
+        "max" : "9e99"
+      }
+    }
+  },
+  "Seed":{
+    "title": "Ceiling",
+    "description": "Sets a seed for the purposes of replication. Leave blank for a random seed.",
+    "type": "float",
+    "value": "0",
+    "validators": {}
+  },
+  "nsim":{
+    "title": "Number of Simulations",
+    "description": "Number of bootstrap replications to be generated",
+    "type": "float",
+    "value": "100",
+    "validators": {
+      "range":{
+        "min":"1",
+        "max": "9e99"
+      }
+    }
+  }
+}
