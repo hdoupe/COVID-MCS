@@ -1,4 +1,4 @@
-from COVID_MCS.model import *
+from COVID_MCS.COVID_MCS import *
 
 name = "COVID-MCS"
 version = "1.0.0"

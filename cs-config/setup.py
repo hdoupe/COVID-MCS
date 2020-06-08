@@ -11,7 +11,7 @@ import os
 setuptools.setup(
     name="cs-config",
     description="Compute Studio configuration files.",
-    url="https://github.com/compute-tooling/compute-studio-kit",
+    url="https://github.com/compute-studio/compute-studio-kit",
     packages=setuptools.find_packages(),
     include_package_data=True,
 )

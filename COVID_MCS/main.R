@@ -1,6 +1,6 @@
 ##### LOAD PACKAGES
-require(dplyr)
-require(lubridate)
+capture.output(require(dplyr))
+capture.output(require(lubridate))
 ##### LOAD HELPER FUNCTIONS
 source("mcs_shapes.R")
 source("mcs_shapes_boot.R")

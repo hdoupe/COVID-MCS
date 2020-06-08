@@ -8,7 +8,8 @@ import paramtools
 import rpy2.robjects as ro
 import rpy2.robjects.packages as rp
 import warnings
-
+import io
+import contextlib
 
 
 # Install packages if they are not already installed
@@ -16,10 +17,11 @@ import warnings
 # utils.install_packages("lubridate", repos = "https://cloud.r-project.org")
 # utils.install_packages("dplyr", repos = "https://cloud.r-project.org")
 
-
 utils = rp.importr("utils")
 base = rp.importr("base")
 dplyr = rp.importr("dplyr")
+
+
 
 
 
@@ -41,14 +43,10 @@ class COVID_MCS_TEST:
 
     def __init__(self, adjustment = ADJ_PATH):
         self.params = COVID_MCS_PARAMETERS()
-        self.adjustment = self.adjust_inputs()
+        self.adjustment = self.ADJ_PATH
         self.params.adjust(self.adjustment)
 
-    def adjust_inputs(self):
-        self.adjustment = self.ADJ_PATH
-        return self.adjustment
-
-    def run_model(self):
+    def MCS_Test(self):
         nested = self.params.Nested[0].get('value')
         shapes = self.params.Shapes[0].get('value').split(', ')
         t = self.params.Days[0].get('value').split(',')
@@ -70,12 +68,11 @@ class COVID_MCS_TEST:
         r1 = ro.r
         r1['source'](mcs_shapes)
 
+
+
         z = r1['mcs_shapes'](t = ro.IntVector(t), n =  ro.IntVector(n), y1 = ro.IntVector(y1),
                              shape=  ro.StrVector(shapes), ceiling = float(ceil), lag = float(lag))
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
         m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = .1)
-        t = r1['summary'](m)
 
-
-c = COVID_MCS_TEST()
-c.run_model()
+        return(r1['summary'](m))
