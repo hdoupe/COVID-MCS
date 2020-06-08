@@ -2,7 +2,8 @@
 import COVID_MCS
 
 def get_version():
-    pass
+    version = COVID_MCS.__version__
+    return f"COVID_MCS v{version}"
 
 
 def get_inputs(meta_param_dict):
