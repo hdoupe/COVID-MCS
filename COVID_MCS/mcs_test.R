@@ -1,6 +1,6 @@
 f.maxij = function(x) max(abs(outer(x,x,'-')))
 
-mcs_shapes_test = function(z, zb, alpha, nested, verbose = F, epsilon = 10^-3) {
+mcs_shapes_test = function(z, zb, alpha, nested, verbose = F) {
   M <- M0 <- length(zb$boot)          #M0 = how many models, M is a counter
   models <- models0 <- unlist(lapply(z$shape,function(z) z$name )) #names of models
   model.ix <- 1:M
@@ -48,8 +48,8 @@ mcs_shapes_test = function(z, zb, alpha, nested, verbose = F, epsilon = 10^-3) {
     }
     Trm <- f.maxij(QL)
     Trmb<- apply( QB, 1, f.maxij )
-    n.ho<- sum(Trmb + epsilon >= Trm)
-    p.ho <- mean(Trmb + epsilon >= Trm)
+    n.ho<- sum(Trmb + .0001 >= Trm)
+    p.ho <- mean(Trmb + .0001 >= Trm)
     worst <- which.max(QL)
     drop <- models[worst]
     
