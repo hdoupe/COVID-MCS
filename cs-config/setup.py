@@ -14,4 +14,5 @@ setuptools.setup(
     url="https://github.com/compute-studio/compute-studio-kit",
     packages=setuptools.find_packages(),
     include_package_data=True,
+    package_data={'COVID_MCS': ['*.r', '*.R']}
 )

@@ -25,7 +25,7 @@ dplyr = rp.importr("dplyr")
 
 
 
-CURRENT_PATH = os.path.abspath(os.path.dirname("mcs_shape"))
+CURRENT_PATH = os.path.abspath(os.path.dirname(__file__))
 mcs_shapes = os.path.join(CURRENT_PATH, "main.R")
 
 
@@ -60,6 +60,8 @@ class COVID_MCS_TEST:
         seed = self.params.Seed[0].get('value')
         seed = float(seed)
         nsim = self.params.nsim[0].get('value')
+
+        print(mcs_shapes)
 
         if seed == 0:
             seed = ro.r("NULL")
