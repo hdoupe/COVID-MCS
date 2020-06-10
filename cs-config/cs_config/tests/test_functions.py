@@ -9,16 +9,23 @@ class TestFunctions1(CoreTestFunctions):
     validate_inputs = functions.validate_inputs
     run_model = functions.run_model
     ok_adjustment = {
-      "Days": [
-        {"value": "1,2,3,4,5,6,7,8,9"}
-      ],
-      "NumTests":[
-        {"value" : "1000,1000,2000,2000,3000,3000,4000,4000,5000"}
-      ],
-      "NumPositive":[
-        {"value" : "500,500,700,700,1000,1000,1500,1500,3000"}
-      ]
+        "Model Parameters" : {
+              "Days": [
+                {"value": "1,2,3,4,5,6,7,8,9"}
+              ],
+              "NumTests":[
+                {"value" : "1000,1000,2000,2000,3000,3000,4000,4000,5000"}
+              ],
+              "NumPositive":[
+                {"value" : "500,500,700,700,1000,1000,1500,1500,3000"}
+              ]
+        }
     }
     bad_adjustment = {
-      "Days": True
-    } 
+      "Model Parameters" :
+      {
+      "Days": [
+        {"value" : True}
+      ]
+      }
+    }
