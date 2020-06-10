@@ -7,6 +7,8 @@ import sys
 import paramtools
 import rpy2.robjects as ro
 import rpy2.robjects.packages as rp
+from rpy2.robjects import pandas2ri
+from rpy2.robjects.conversion import localconverter
 import warnings
 import io
 import contextlib
@@ -77,4 +79,8 @@ class COVID_MCS_TEST:
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
         m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = .1)
 
-        return(r1['summary'](m))
+        rdf = r1['summary'](m)
+        # Convert R DataFrame to Pandas DataFrame
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            pdf = ro.conversion.rpy2py(rdf)
+        return pdf

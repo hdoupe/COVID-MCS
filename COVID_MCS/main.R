@@ -1,14 +1,19 @@
 ##### LOAD PACKAGES
 capture.output(require(dplyr))
 capture.output(require(lubridate))
+
+#### SET WORKING DIRECTORY TO SOURCE FILE LOCATION
+dir <- dirname(parent.frame(2)$ofile)
+setwd(dir)
+
 ##### LOAD HELPER FUNCTIONS
 source("mcs_shapes.R")
 source("mcs_shapes_boot.R")
 source("mcs_test.R")
 
 ##### UPLOAD DATA
-# t = NULL 
-# n = NULL 
+# t = NULL
+# n = NULL
 # y1 = NULL
 # shape = NULL # c("con_cei", "dec_cei", "ius_cei", "cei", "unr")
 # nsim = NULL # 1000

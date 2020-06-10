@@ -51,15 +51,19 @@ def run_model(meta_param_dict, adjustment):
     c = COVID_MCS_TEST(adjustment = params)
     model_output = c.MCS_Test()
 
-    to_print = "<p>" + model_output + "</p>"
+    to_print = model_output.to_html()
 
     out = {
         "renderable": [{
             "media_type": "table",
             "title": "My Table",
             "data": to_print
-            }],
-        "downloadable": []
+        }],
+        "downloadable": [{
+            "media_type": "CSV",
+            "title": "My Table",
+            "data": model_output.to_csv()
+        }]
     }
 
     return(out)
