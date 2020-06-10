@@ -1,5 +1,8 @@
 # bash commands for installing your package
 git clone https://github.com/burkeob/COVID-MCS
 cd COVID-MCS
-conda-forge::paramtools 
+conda install -c conda-forge paramtools pandas rpy2
+conda install -c r r r-dplyr r-lubridate
+conda install -c conda-forge r-quadprog
+
 pip install -e .
