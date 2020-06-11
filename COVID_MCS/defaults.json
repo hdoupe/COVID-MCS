@@ -91,7 +91,7 @@
     }
   },
   "Lag":{
-    "title": "Ceiling",
+    "title": "Lag",
     "description": "Permits comparisons across proportions more than one day apart",
     "type": "float",
     "value": [
@@ -107,7 +107,7 @@
     }
   },
   "Seed":{
-    "title": "Ceiling",
+    "title": "Seed",
     "description": "Sets a seed for the purposes of replication. Leave as 0 for a random seed.",
     "type": "float",
     "value": [
