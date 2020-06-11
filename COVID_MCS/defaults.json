@@ -23,7 +23,7 @@
   },
   "Shapes":{
     "title": "Shapes to Test",
-    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr.",
+    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr",
     "type": "str",
     "section_1": "Model Inputs",
     "value": [

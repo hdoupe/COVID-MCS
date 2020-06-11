@@ -45,7 +45,7 @@ class COVID_MCS_TEST:
 
     def __init__(self, adjustment = ADJ_PATH):
         self.params = COVID_MCS_PARAMETERS()
-        self.adjustment = self.ADJ_PATH
+        self.adjustment = adjustment
         self.params.adjust(self.adjustment)
 
     def MCS_Test(self):

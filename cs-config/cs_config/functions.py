@@ -46,25 +46,25 @@ def validate_inputs(meta_param_dict, adjustment, errors_warnings):
 def run_model(meta_param_dict, adjustment):
 
     params = COVID_MCS_PARAMETERS()
-    params.adjust(adjustment['Model Parameters'])
+    params = params.adjust(adjustment['Model Parameters'])
 
     c = COVID_MCS_TEST(adjustment = params)
     model_output, summary = c.MCS_Test()
 
     to_print = 'Testing at level ' + str(model_output['alpha'][0]) + ' with ' + str(model_output['B'][0]) + ' bootstraps' + \
-    '\n\n' + ' Final models:\n ' + (', '.join(model_output['Mstar'])) + '\n\n Summary\n'
+    '<br><br>' + ' Final models:<br> ' + (', '.join(model_output['Mstar'])) + '<br><br> Summary<br>'
 
-    to_print = to_print + summary.to_html()
+    to_print = to_print + summary.to_html(header = False, index = False)
 
     out = {
         "renderable": [{
             "media_type": "table",
-            "title": "My Table",
+            "title": "Model Outputs",
             "data": to_print
         }],
         "downloadable": [{
             "media_type": "CSV",
-            "title": "My Table",
+            "title": "Model Summary",
             "data": summary.to_csv()
         }]
     }
