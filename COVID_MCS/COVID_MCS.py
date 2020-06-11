@@ -79,8 +79,19 @@ class COVID_MCS_TEST:
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
         m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = .1)
 
+
+        # Convert R DataFrame to Pandas DataFrame
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            pdf = ro.conversion.rpy2py(m)
+
+        output = dict(zip(pdf.names, map(list,list(pdf))))
+
+
+
         rdf = r1['summary'](m)
         # Convert R DataFrame to Pandas DataFrame
         with localconverter(ro.default_converter + pandas2ri.converter):
             pdf = ro.conversion.rpy2py(rdf)
-        return pdf
+
+
+        return output, pdf

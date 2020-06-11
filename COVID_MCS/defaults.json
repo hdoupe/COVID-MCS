@@ -1,12 +1,19 @@
 {
   "schema": {
     "labels":{},
-    "additional_members": {}
+    "additional_members": {
+            "section_1": {
+                "type": "str",
+                "number_dims": 0
+            }
+        }
+
   },
   "Nested":{
     "title": "Models Are Nested",
-    "description": "Models are ordered in least to most specific",
+    "description": "Models are ordered in least to most specific. If unsure, assume that they are not.",
     "type": "bool",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : false
@@ -16,8 +23,9 @@
   },
   "Shapes":{
     "title": "Shapes to Test",
-    "description": "Shapes for model to test, separated by a comma and a space. See documentation for possible shapes.",
+    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr.",
     "type": "str",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : "dec_cei, unr"
@@ -29,6 +37,7 @@
     "title": "Indicies demarking unique days",
     "description": "List of numbers indicating days, separated by a comma.",
     "type": "str",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : "1,2,3"
@@ -40,6 +49,7 @@
     "title": "Number of Tests",
     "description": "Total number of tests on a unique day, separated by a comma.",
     "type": "str",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : "500,500,500"
@@ -51,6 +61,7 @@
     "title": "Number of Positive ests",
     "description": "Total number of positive tests on a unique day, separated by a comma.",
     "type": "str",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : "100,300,200"
@@ -62,6 +73,7 @@
     "title": "Alpha",
     "description": "Significance level for the test",
     "type": "float",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : 0.95
@@ -78,6 +90,7 @@
     "title": "Ceiling",
     "description": "Sets the ceilieng for the relevant shape constraints",
     "type": "float",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : 1
@@ -94,6 +107,7 @@
     "title": "Lag",
     "description": "Permits comparisons across proportions more than this number of days apart",
     "type": "float",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : 1
@@ -110,6 +124,7 @@
     "title": "Seed",
     "description": "Sets a seed for the purposes of replication. Leave as 0 for a random seed.",
     "type": "float",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : 0
@@ -121,6 +136,7 @@
     "title": "Number of Simulations",
     "description": "Number of bootstrap replications to be generated",
     "type": "float",
+    "section_1": "Model Inputs",
     "value": [
       {
         "value" : 100
