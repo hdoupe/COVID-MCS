@@ -54,7 +54,7 @@ def run_model(meta_param_dict, adjustment):
     to_print = 'Testing at level ' + str(model_output['alpha'][0]) + ' with ' + str(model_output['B'][0]) + ' bootstraps' + \
     '<br><br>' + ' Final models:<br> ' + (', '.join(model_output['Mstar'])) + '<br><br> Summary<br>'
 
-    to_print = to_print + summary.to_html(header = False, index = False)
+    to_print = to_print + summary.to_html(index = False)
 
     out = {
         "renderable": [{

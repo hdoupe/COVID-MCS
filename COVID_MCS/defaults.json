@@ -58,7 +58,7 @@
     "validators": {}
   },
   "NumPositive":{
-    "title": "Number of Positive ests",
+    "title": "Number of Positive Tests",
     "description": "Total number of positive tests on a unique day, separated by a comma.",
     "type": "str",
     "section_1": "Model Inputs",
