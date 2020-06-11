@@ -92,7 +92,7 @@
   },
   "Lag":{
     "title": "Lag",
-    "description": "Permits comparisons across proportions more than one day apart",
+    "description": "Permits comparisons across proportions more than this number of days apart",
     "type": "float",
     "value": [
       {
