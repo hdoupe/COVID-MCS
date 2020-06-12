@@ -1,5 +1,6 @@
 # bash commands for installing your package
-git clone https://github.com/burkeob/COVID-MCS
+# git clone https://github.com/burkeob/COVID-MCS
+git clone -b twodim --depth 1 https://github.com/hdoupe/COVID-MCS
 cd COVID-MCS
 conda install -c conda-forge paramtools pandas rpy2
 conda install -c r r r-dplyr r-lubridate
