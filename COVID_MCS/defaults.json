@@ -45,6 +45,18 @@
     ],
     "validators": {}
   },
+  "Tests":{
+    "title": "Tests",
+    "description": "Total number of tests and positive tests on a unique day.",
+    "type": "int",
+    "number_dims": 2,
+    "value": [
+      {
+        "value" : [[500, 500, 500], [100, 300, 200]]
+      }
+    ],
+    "validators": {}
+  },
   "NumTests":{
     "title": "Number of Tests",
     "description": "Total number of tests on a unique day, separated by a comma.",
